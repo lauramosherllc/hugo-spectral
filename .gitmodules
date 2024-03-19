@@ -1,0 +1,3 @@
+[submodule "themes/hugo-spectral"]
+	path = themes/hugo-spectral
+	url = https://github.com/lauramosherllc/hugo-spectral.git
