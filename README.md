@@ -1,4 +1,4 @@
-# Hugo Spectral
+# Hugo Spectral | [Demo](https://lauramosher.com/hugo-spectral/)
 
 This is a full port of HTML5UP's [Spectral](https://html5up.net/spectral) theme, free for personal and commercial use.
 
@@ -21,10 +21,21 @@ It's similar to the [Spectral port by sbruder](https://github.com/sbruder/spectr
 - Better Taxonomy and Term pages.
 - Pages can be switched to HTML markup for full control over layout.
 
-## Features
-
-
-
 ## Installation
 
+Add the theme to your hugo site:
+
+```
+git submodule add https://github.com/lauramosherllc/hugo-spectral.git themes/hugo-spectral
+```
+
+And configure your site to use the theme:
+
+```toml
+theme = 'hugo-spectral'
+# theme = ['hugo-spectral', 'ananke']
+```
+
 ## Configuration
+
+See [exampleSite](https://github.com/lauramosherllc/hugo-spectral/tree/exampleSite) for an example config.toml configuration and site.
