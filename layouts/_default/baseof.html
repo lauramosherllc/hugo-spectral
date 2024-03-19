@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ or site.Language.LanguageCode site.Language.Lang }}" dir="{{ or site.Language.LanguageDirection `ltr` }}">
+<head>
+  {{ partial "head.html" . }}
+</head>
+<body class="landing is-preload">
+  <div id="page-wrapper">
+    <header id="header" {{if .IsHome}}class="alt"{{end}}>
+      {{ partial "header.html" . }}
+    </header>
+    {{ block "main" . }}{{ end }}
+    <footer>
+      {{ partial "footer.html" . }}
+    </footer>
+  </div>
+
+<!-- Scripts -->
+{{ $jquery := resources.Get "js/jquery.min.js" }}
+{{ $jquery_scrollex := resources.Get "js/jquery.scrollex.min.js" }}
+{{ $jquery_scrolly := resources.Get "js/jquery.scrolly.min.js" }}
+{{ $browser := resources.Get "js/browser.min.js" }}
+{{ $breakpoints := resources.Get "js/breakpoints.min.js" }}
+{{ $util := resources.Get "js/util.js" }}
+{{ $main := resources.Get "js/main.js" }}
+
+{{ $js := slice $jquery $jquery_scrollex $jquery_scrolly $browser $breakpoints $util $main | resources.Concat "js/bundle.js" | minify | fingerprint "sha512" }}
+
+<script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
+
+
+</body>
+</html>

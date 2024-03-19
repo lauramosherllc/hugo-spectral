@@ -1,0 +1,40 @@
+{{ define "main" }}
+<article id="main">
+  <header>
+    <h2>{{ .Title }}</h2>
+    <p>{{ .Params.Subtitle }}</p>
+  </header>
+
+  {{ if eq .Params.Markup "html" }}
+    {{ .Content }}
+  {{ else }}
+  <section class="wrapper style5">
+    <div class="inner">
+    {{ range .Paginator.Pages }}
+      <section class="wrapper post">
+        {{ partial "posts/list_header" . }}
+        <p>{{ .Summary }}</p>
+        {{ partial "terms.html" (dict "taxonomy" "tags" "page" .) }}
+      </section>
+    {{ end }}
+    </div>
+  </section>
+  <div class="wrapper style5">
+    <div class="inner align-center">
+      <ul class="icons">
+        {{ if .Paginator.HasPrev }}
+          <li><a class="icon solid fa-angles-left" href="{{ .Paginator.First.URL }}"><span class="label">First</span></a></li>
+          <li><a class="icon solid fa-chevron-left" href="{{ .Paginator.Prev.URL }}"><span class="label">Previous</span></a></li>
+        {{ end }}
+        <li>{{ .Paginator.PageNumber }}</li>
+        {{ if .Paginator.HasNext }}
+          <li><a class="icon solid fa-chevron-right" href="{{ .Paginator.Next.URL }}"><span class="label">Next</span></a></li>
+          <li><a class="icon solid fa-angles-right" href="{{ .Paginator.Last.URL }}"><span class="label">Last</span></a></li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+
+  {{ end }}
+</article>
+{{ end }}

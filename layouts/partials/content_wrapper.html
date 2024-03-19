@@ -1,0 +1,12 @@
+{{ $md := .ctx.useMarkdown | default .Params.useMarkdown | default false }}
+
+{{ if $md }}
+  {{ $md_body := .ctx.description | markdownify }}
+  {{ if not (in $md_body "<p>") }}
+    <p>{{ $md_body | safeHTML }}</p>
+  {{ else }}
+    {{ $md_body | safeHTML }}
+  {{ end }}
+{{ else }}
+  <p>{{ .ctx.description | safeHTML }}</p>
+{{ end }}

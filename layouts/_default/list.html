@@ -1,0 +1,37 @@
+{{ define "main" }}
+{{ $isTaxonomy := eq .Kind "taxonomy" }}
+{{ $isTerm := eq .Kind "term" }}
+<article id="main">
+  <header>
+    <p>{{ if $isTerm }}{{ .Parent.Title }}{{ end }}</p>
+    <h2>{{ .Title }}</h2>
+  </header>
+
+  {{ if $isTaxonomy }}
+    <section class="wrapper style5">
+      <div class="inner">
+        <ul>
+          {{ range .Pages }}
+            <li><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+    </section>
+  {{ else }}
+    {{ with .Content }}
+      <section class="wrapper style5">
+        {{ . }}
+      </section>
+    {{ end }}
+    <section class="wrapper style5">
+      <div class="inner">
+        {{ range .Pages }}
+          <section class="wrapper post">
+            {{ partial "posts/list_header" . }}
+            <p>{{ .Summary }}</p>
+          </section>
+        {{ end }}
+      </div>
+    </section>
+  {{ end }}
+{{ end }}

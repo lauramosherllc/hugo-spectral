@@ -1,0 +1,19 @@
+<!-- Footer -->
+<footer id="footer">
+  {{- with .Site.Params.social }}
+  <ul class="icons">
+    {{ with .twitter_x }}<li><a href="{{ . }}" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>{{ end }}
+    {{ with .facebook }}<li><a href="{{ . }}" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>{{ end }}
+    {{ with .instagram }}<li><a href="{{ . }}" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>{{ end }}
+    {{ with .dribble }}<li><a href="{{ . }}" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>{{ end }}
+    {{ with .github }}<li><a href="{{ . }}" class="icon brands fa-github"><span class="label">GitHub</span></a></li>{{ end }}
+    {{ with .mastodon }}<li><a href="{{ . }}" class="icon brands fa-mastodon"><span class="label">Mastodon</span></a></li>{{ end }}
+    {{ with .email }}<li><a href="mailto:{{ . }}" class="icon solid fa-envelope"><span class="label">Email</span></a></li>{{ end }}
+  </ul>
+  {{- end }}
+  <ul class="copyright">
+    {{with .Site.Params.copyright }}<li>&copy; {{with .copyrightYearStart}}{{.}} - {{end}}{{ now.Year }} {{ .copyright | safeHTML }}</li>{{ end }}
+    <li>Theme: <a href="http://lauramosher.com">Laura Mosher LLC</a></li>
+    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+  </ul>
+</footer>

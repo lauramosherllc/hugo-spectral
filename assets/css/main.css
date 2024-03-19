@@ -1,0 +1,52 @@
+/*
+  Hugo Spectral + by Laura Mosher LLC
+  lauramosher.com | @lauramosher
+
+  Original Design:
+	Spectral by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
+.wrapper.post {
+  padding: 3rem 0;
+}
+
+.wrapper.post:first-child {
+  padding-top: 0;
+}
+
+.wrapper.post + .wrapper.post {
+  border-top: 1px dashed rgba(0, 0, 0, 0.125);
+}
+
+.wrapper.post header h2 {
+  margin-bottom: 0.5rem;
+}
+.wrapper.post header time {
+  color: #8E8892;
+  font-size: 0.9em;
+}
+
+ul.terms {
+  display: block;
+  list-style-type: none;
+  padding: 0;
+  margin: 0.25rem 0;
+}
+
+  ul.terms li {
+    display: inline-block;
+    padding: 0;
+  }
+
+    ul.terms li > a {
+      border-bottom: none;
+      padding: 0.25rem .5rem;
+      border: 1px solid;
+      border-color: rgba(0, 0, 0, 0.125);
+    }
+
+  ul.terms li {
+    border-color: #dfdfdf;
+  }

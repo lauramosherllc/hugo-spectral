@@ -1,0 +1,25 @@
+name = 'Spectral'
+license = 'CC BY 3.0'
+licenselink = 'https://github.com/lauramosherllc/hugo-spectral/LICENSE'
+description = 'Hugo Theme port of HTML5UP Spectral Theme with Extras'
+min_version = "0.114.0"
+
+# The home page of the theme, where the source can be found
+homepage = 'https://github.com/lauramosherllc/hugo-spectral'
+
+# If you have a running demo of the theme
+demosite = 'https://lauramosherllc.github.io/hugo-spectral'
+
+# Taxonomy terms
+tags = ['blog', 'company', 'portfolio', 'landing']
+features = ['responsive', 'blog']
+
+# If the theme has a single author
+[author]
+  name = 'Laura Mosher LLC'
+  homepage = 'https://lauramosher.com'
+
+# If porting an existing theme
+[original]
+  name = "HTML5UP Spectral"
+  homepage = "https://html5up.net/spectral"

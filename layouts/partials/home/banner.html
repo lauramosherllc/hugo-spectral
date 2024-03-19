@@ -1,0 +1,14 @@
+{{- with .Site.Params.banner }}
+<section id="banner">
+  <div class="inner">
+    <h2>{{ .title | safeHTML }}</h2>
+    {{ partial "content_wrapper.html" (dict "ctx" . ) }}
+    {{- with .button }}
+      <ul class="actions special">
+        <li><a href="{{ .url }}" class="button primary">{{ .label }}</a></li>
+      </ul>
+    {{- end }}
+  </div>
+  <a href="#one" class="more scrolly">{{ .label | default "Learn More" }}</a>
+</section>
+{{- end }}

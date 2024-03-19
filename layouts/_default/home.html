@@ -1,0 +1,36 @@
+{{ define "main" }}
+<!-- Banner -->
+{{ partial "home/banner.html" . }}
+
+{{ range .Site.Params.sections }}
+  {{ if eq .sectionLayout "wide" }}
+  <section class='wrapper {{ .colorStyle | default "style3"}} special'>
+      {{ partial "home/wide.html" . }}
+    </section>
+  {{ end }}
+  {{ if eq .sectionLayout "spotlight" }}
+    <section class='wrapper alt {{ .colorStyle | default "style2"}}'>
+      {{ partial "home/split.html" . }}
+    </section>
+  {{ end }}
+{{ end }}
+
+<!-- CTA -->
+{{- with .Site.Params.cta}}
+<section id="cta" class="wrapper style4">
+  <div class="inner">
+    <header>
+      <h2>{{ .title }}</h2>
+      {{ partial "content_wrapper.html" (dict "ctx" . ) }}
+    </header>
+    {{- with .actions }}
+    <ul class="actions stacked">
+      {{ range . }}
+        <li><a href="{{ .url }}" class="button fit {{ .buttonStyle }}">{{ .label }}</a></li>
+      {{ end }}
+    </ul>
+    {{- end}}
+  </div>
+</section>
+{{- end }}
+{{ end }}

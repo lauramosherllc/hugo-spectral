@@ -1,0 +1,18 @@
+{{ define "main" }}
+<article id="main">
+  <header>
+    <h2>{{ .Title }}</h2>
+    <p>{{ .Params.Subtitle }}</p>
+  </header>
+
+  {{ if eq .Params.Markup "html" }}
+    {{ .Content }}
+  {{ else }}
+    <section class="wrapper style5">
+      <div class="inner">
+        {{ .Content }}
+      </div>
+    </section>
+  {{ end }}
+</article>
+{{ end }}

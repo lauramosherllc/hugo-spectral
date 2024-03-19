@@ -1,0 +1,23 @@
+<div class="inner">
+  <header class="major">
+    <h2>{{ .title | safeHTML }}</h2>
+    {{ partial "content_wrapper.html" (dict "ctx" . ) }}
+  </header>
+  {{- with .icons }}
+    <ul class="icons major">
+      {{range . }}
+        <li><span class='icon {{.iconStyle | default "regular"}} {{.iconName}} major {{.colorStyle | default "style1"}}'><span class="label">{{.label}}</span></span></li>
+      {{ end }}
+    </ul>
+  {{- end }}
+  {{- with .features }}
+    <ul class="features">
+      {{ range . }}
+        <li class='icon {{ .iconStyle | default "regular" }} {{ .iconName }}'>
+          <h3>{{ .title | safeHTML }}</h3>
+          {{ partial "content_wrapper.html" (dict "ctx" . ) }}
+        </li>
+      {{ end }}
+    </ul>
+  {{- end }}
+</div>
