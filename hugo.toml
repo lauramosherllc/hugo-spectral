@@ -1,11 +1,10 @@
-baseURL = "/"
 languageCode = 'en-us'
+baseURL = '/'
 title = 'Spectral by HTML5 UP'
 description = 'Another fine responsive site template freebie crafted by HTML5 UP.'
 keywords = ''
 paginate = 5
 theme = 'hugo-spectral'
-relativeURLs = true
 
 [taxonomies]
   tag = "tags"
@@ -15,22 +14,22 @@ relativeURLs = true
 # Main Menu
 [[menus.main]]
   name = 'Home'
-  pageRef = '/'
+  pageRef = ''
   weight = 10
 
 [[menus.main]]
   name = 'Generic Page'
-  pageRef = '/generic'
+  pageRef = 'generic'
   weight = 20
 
 [[menus.main]]
   name = 'Elements'
-  pageRef = '/tags/elements'
+  pageRef = 'tags/elements'
   weight = 30
 
 [[menus.main]]
   name = 'Posts'
-  pageRef = '/posts'
+  pageRef = 'posts'
   weight = 40
 
 # Homepage Configuration
