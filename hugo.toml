@@ -4,6 +4,7 @@ description = 'Another fine responsive site template freebie crafted by HTML5 UP
 keywords = ''
 paginate = 5
 theme = 'hugo-spectral'
+relativeURLs = true
 
 [taxonomies]
   tag = "tags"
