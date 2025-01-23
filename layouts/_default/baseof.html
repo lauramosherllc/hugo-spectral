@@ -3,7 +3,7 @@
 <head>
   {{ partial "head.html" . }}
 </head>
-<body class="landing is-preload">
+<body class="landing is-preload {{ .Layout }}">
   <div id="page-wrapper">
     <header id="header" {{if .IsHome}}class="alt"{{end}}>
       {{ partial "header.html" . }}
